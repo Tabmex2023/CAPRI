@@ -3,37 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Capri Pizza</title>
+<title>Capri Pizza & Grill</title>
 
 <style>
 body {
-  font-family: Arial;
-  text-align: center;
+  margin: 0;
+  font-family: Arial, sans-serif;
   background: #111;
   color: white;
+  text-align: center;
 }
 
-a {
+.container {
+  padding: 20px;
+}
+
+.logo {
+  width: 180px;
+  margin-top: 20px;
+}
+
+h1 {
+  margin: 10px 0;
+}
+
+.button {
   display: block;
-  margin: 20px;
+  margin: 15px auto;
   padding: 15px;
-  background: red;
+  width: 80%;
+  max-width: 300px;
+  background: #e63946;
   color: white;
   text-decoration: none;
   border-radius: 10px;
+  font-size: 16px;
 }
 
+.map {
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
 </style>
+
 </head>
 
 <body>
 
-<h1>Capri Pizza & Grill</h1>
-<p>Beste Pizza in Emsbüren</p>
+<div class="container">
 
-<a href="menu.html">📋 Speisekarte ansehen</a>
-<a href="tel:+4959031399">📞 Anrufen</a>
+<img src="https://i.postimg.cc/wjzgLbSQ/IMG-8683.jpg" class="logo">
 
+<h1>🍕 Capri Pizza & Grill</h1>
+<p>Bahnhofstraße 83, 48488 Emsbüren</p>
+
+<a class="button" href="menu.html">📋 Speisekarte ansehen</a>
+
+<a class="button" href="tel:+4959031399">📞 Jetzt anrufen</a>
+
+<div class="map">
+<iframe 
+  src="https://www.google.com/maps?q=Bahnhofstraße+83,+48488+Emsbüren&output=embed"
+  width="100%" 
+  height="250" 
+  style="border:0;">
+</iframe>
+</div>
+
+</div>
 
 </body>
 </html>
