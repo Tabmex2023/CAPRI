@@ -3,48 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Speisekarte</title>
+<title>Capri Pizza & Grill</title>
 
 <style>
 body {
-  font-family: Arial;
-  background: #111;
+  margin: 0;
+  font-family: Arial, sans-serif;
   color: white;
   text-align: center;
+
+  /* 🔥 Hintergrund Logo */
+  background-image: url("https://i.postimg.cc/wjzgLbSQ/IMG-8683.jpg");
+  background-size: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-/* Kategorie Button */
-.accordion {
-  background: #222;
-  color: white;
-  cursor: pointer;
+/* 🔥 dunkler Overlay für bessere Lesbarkeit */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  z-index: -1;
+}
+
+.container {
+  padding: 20px;
+}
+
+/* Logo oben */
+.logo {
+  width: 180px;
+  margin-top: 20px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255,0,0,0.6);
+}
+
+/* Buttons */
+.button {
+  display: block;
+  margin: 15px auto;
   padding: 15px;
-  width: 90%;
-  max-width: 500px;
-  margin: 10px auto;
-  border: none;
-  text-align: left;
-  font-size: 18px;
+  width: 80%;
+  max-width: 300px;
+  background: #e63946;
+  color: white;
+  text-decoration: none;
   border-radius: 10px;
+  font-size: 16px;
 }
 
-/* Inhalt */
-.panel {
-  display: none;
-  background: #1a1a1a;
-  margin: 0 auto 10px;
-  padding: 10px;
-  width: 90%;
-  max-width: 500px;
+/* Karte */
+.map {
+  margin-top: 20px;
   border-radius: 10px;
-}
-
-/* Einzelne Items */
-.item {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 0;
-  border-bottom: 1px solid #333;
+  overflow: hidden;
 }
 </style>
 
@@ -52,41 +70,32 @@ body {
 
 <body>
 
-<h1>📋 Speisekarte</h1>
+<div class="container">
 
-<!-- 🍕 Pizza -->
-<button class="accordion">🍕 Pizza</button>
-<div class="panel">
-  <div class="item">
-    <span>Pizza Margherita</span>
-    <span>6,50€</span>
-  </div>
-  <div class="item">
-    <span>Pizza Salami</span>
-    <span>8,50€</span>
-  </div>
+<!-- 🔥 Logo -->
+<img src="https://i.postimg.cc/wjzgLbSQ/IMG-8683.jpg" class="logo" alt="Capri Logo">
+
+<h1>🍕 Capri Pizza & Grill</h1>
+<p>Bahnhofstraße 83<br>48488 Emsbüren</p>
+
+<!-- Buttons -->
+<a class="button" href="menu.html">📋 Speisekarte ansehen</a>
+
+<a class="button" href="tel:+4959031399">📞 Jetzt anrufen</a>
+
+<a class="button" href="https://wa.me/49123456789">💬 WhatsApp bestellen</a>
+
+<!-- Google Maps -->
+<div class="map">
+<iframe 
+  src="https://www.google.com/maps?q=Bahnhofstraße+83,+48488+Emsbüren&output=embed"
+  width="100%" 
+  height="250" 
+  style="border:0;">
+</iframe>
 </div>
 
-<!-- 🥙 Döner -->
-<button class="accordion">🥙 Döner & Kebab</button>
-<div class="panel">
-  <div class="item">
-    <span>Döner Tasche</span>
-    <span>6,00€</span>
-  </div>
 </div>
-
-<script>
-var acc = document.getElementsByClassName("accordion");
-
-for (let i = 0; i < acc.length; i++) {
-  acc[i].onclick = function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    panel.style.display = panel.style.display === "block" ? "none" : "block";
-  };
-}
-</script>
 
 </body>
 </html>
