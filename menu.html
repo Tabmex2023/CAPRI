@@ -3,56 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Speisekarte - Capri</title>
+<title>Speisekarte</title>
 
 <style>
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   background: #111;
   color: white;
   text-align: center;
 }
 
-.header {
-  padding: 15px;
-}
-
-.back-button {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 15px;
-  background: #444;
+/* Kategorie Button */
+.accordion {
+  background: #222;
   color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-size: 14px;
-}
-
-h1 {
-  margin-top: 5px;
-}
-
-.menu-img {
-  width: 95%;
-  max-width: 700px;
-  margin: 15px auto;
+  cursor: pointer;
+  padding: 15px;
+  width: 90%;
+  max-width: 500px;
+  margin: 10px auto;
+  border: none;
+  text-align: left;
+  font-size: 18px;
   border-radius: 10px;
 }
 
-/* Optional: Sticky Button unten */
-.sticky-order {
-  position: fixed;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #e63946;
-  color: white;
-  padding: 15px 25px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-size: 16px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+/* Inhalt */
+.panel {
+  display: none;
+  background: #1a1a1a;
+  margin: 0 auto 10px;
+  padding: 10px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+/* Einzelne Items */
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #333;
 }
 </style>
 
@@ -60,15 +52,41 @@ h1 {
 
 <body>
 
-<div class="header">
-  <a href="index.html" class="back-button">⬅ Zurück</a>
-  <h1>📋 Speisekarte</h1>
+<h1>📋 Speisekarte</h1>
+
+<!-- 🍕 Pizza -->
+<button class="accordion">🍕 Pizza</button>
+<div class="panel">
+  <div class="item">
+    <span>Pizza Margherita</span>
+    <span>6,50€</span>
+  </div>
+  <div class="item">
+    <span>Pizza Salami</span>
+    <span>8,50€</span>
+  </div>
 </div>
 
-<img src="https://i.postimg.cc/JhbXKgnn/IMG-8684.jpg" class="menu-img" alt="Speisekarte Capri">
+<!-- 🥙 Döner -->
+<button class="accordion">🥙 Döner & Kebab</button>
+<div class="panel">
+  <div class="item">
+    <span>Döner Tasche</span>
+    <span>6,00€</span>
+  </div>
+</div>
 
-<!-- Optionaler Bestell-Button -->
-<a href="https://wa.me/49123456789" class="sticky-order">💬 Jetzt bestellen</a>
+<script>
+var acc = document.getElementsByClassName("accordion");
+
+for (let i = 0; i < acc.length; i++) {
+  acc[i].onclick = function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    panel.style.display = panel.style.display === "block" ? "none" : "block";
+  };
+}
+</script>
 
 </body>
 </html>
