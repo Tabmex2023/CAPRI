@@ -6,63 +6,121 @@
 <title>Capri Pizza & Grill</title>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   color: white;
-  text-align: center;
-
-  /* 🔥 Hintergrund Logo */
-  background-image: url("https://i.postimg.cc/wjzgLbSQ/IMG-8683.jpg");
-  background-size: 300px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
 }
 
-/* 🔥 dunkler Overlay für bessere Lesbarkeit */
-body::before {
-  content: "";
+/* 🔥 Background Layer */
+.bg {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.85);
+
+  background-image: url("https://i.postimg.cc/wjzgLbSQ/IMG-8683.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  filter: blur(6px) brightness(0.5);
+  z-index: -2;
+}
+
+/* 🔥 Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
   z-index: -1;
 }
 
+/* 🔥 Content Container */
 .container {
-  padding: 20px;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 25px;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
 }
 
-/* Logo oben */
+/* Logo */
 .logo {
-  width: 180px;
-  margin-top: 20px;
+  width: 120px;
   border-radius: 50%;
-  box-shadow: 0 0 20px rgba(255,0,0,0.6);
+  margin-bottom: 10px;
+}
+
+/* Titel */
+h1 {
+  margin: 10px 0;
+  font-size: 24px;
+}
+
+p {
+  font-size: 14px;
 }
 
 /* Buttons */
 .button {
   display: block;
-  margin: 15px auto;
+  margin: 12px auto;
   padding: 15px;
-  width: 80%;
-  max-width: 300px;
+  width: 100%;
+  max-width: 320px;
   background: #e63946;
   color: white;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: 12px;
+  font-weight: bold;
   font-size: 16px;
 }
 
-/* Karte */
+/* Map */
 .map {
   margin-top: 20px;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
+}
+
+/* 🔥 Sticky WhatsApp Button */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .container {
+    margin-top: 80px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .logo {
+    width: 150px;
+  }
 }
 </style>
 
@@ -70,20 +128,23 @@ body::before {
 
 <body>
 
+<!-- 🔥 Background -->
+<div class="bg"></div>
+<div class="overlay"></div>
+
 <div class="container">
 
-<!-- 🔥 Logo -->
-<img src="https://i.postimg.cc/wjzgLbSQ/IMG-8683.jpg" class="logo" alt="Capri Logo">
+<img src="https://i.postimg.cc/wjzgLbSQ/IMG-8683.jpg" class="logo">
 
 <h1>🍕 Capri Pizza & Grill</h1>
 <p>Bahnhofstraße 83<br>48488 Emsbüren</p>
 
-<!-- Buttons -->
 <a class="button" href="menu.html">📋 Speisekarte ansehen</a>
 
 <a class="button" href="tel:+4959031399">📞 Jetzt anrufen</a>
 
-<!-- Google Maps -->
+<a class="button" href="https://wa.me/49123456789">💬 WhatsApp bestellen</a>
+
 <div class="map">
 <iframe 
   src="https://www.google.com/maps?q=Bahnhofstraße+83,+48488+Emsbüren&output=embed"
@@ -94,6 +155,9 @@ body::before {
 </div>
 
 </div>
+
+<!-- 🔥 Floating WhatsApp -->
+<a href="https://wa.me/49123456789" class="whatsapp">💬</a>
 
 </body>
 </html>
