@@ -3,86 +3,170 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Speisekarte</title>
+<title>Speisekarte - Capri</title>
 
 <style>
+* { box-sizing: border-box; }
+
 body {
-  font-family: Arial;
-  background: #111;
+  margin: 0;
+  font-family: Arial, sans-serif;
   color: white;
+}
+
+/* Background */
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url("https://i.postimg.cc/wjzgLbSQ/IMG-8683.jpg") center/contain no-repeat;
+  filter: blur(6px) brightness(0.5);
+  z-index: -2;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: -1;
+}
+
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 15px;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  background: #444;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+}
+
+h1 {
   text-align: center;
 }
 
-/* Kategorie Button */
+/* Accordion */
 .accordion {
-  background: #222;
-  color: white;
+  background: rgba(255,255,255,0.08);
   cursor: pointer;
   padding: 15px;
-  width: 90%;
-  max-width: 500px;
-  margin: 10px auto;
+  width: 100%;
+  margin: 10px 0;
   border: none;
   text-align: left;
   font-size: 18px;
   border-radius: 10px;
+  color: white;
 }
 
-/* Inhalt */
 .panel {
   display: none;
-  background: #1a1a1a;
-  margin: 0 auto 10px;
+  background: rgba(255,255,255,0.05);
   padding: 10px;
-  width: 90%;
-  max-width: 500px;
   border-radius: 10px;
 }
 
-/* Einzelne Items */
 .item {
   display: flex;
   justify-content: space-between;
   padding: 8px 0;
   border-bottom: 1px solid #333;
 }
-</style>
 
+/* WhatsApp */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 15px;
+  border-radius: 50%;
+  text-decoration: none;
+}
+</style>
 </head>
 
 <body>
 
+<div class="bg"></div>
+<div class="overlay"></div>
+
+<div class="container">
+
+<a href="index.html" class="back">⬅ Zurück</a>
 <h1>📋 Speisekarte</h1>
 
-<!-- 🍕 Pizza -->
+<!-- 🍕 PIZZA -->
 <button class="accordion">🍕 Pizza</button>
 <div class="panel">
-  <div class="item">
-    <span>Pizza Margherita</span>
-    <span>6,50€</span>
-  </div>
-  <div class="item">
-    <span>Pizza Salami</span>
-    <span>8,50€</span>
-  </div>
+  <div class="item"><span>Pizza Margherita</span><span>6,50€</span></div>
+  <div class="item"><span>Pizza Salami</span><span>8,50€</span></div>
+  <div class="item"><span>Pizza Prosciutto</span><span>8,50€</span></div>
+  <div class="item"><span>Pizza Funghi</span><span>8,00€</span></div>
+  <div class="item"><span>Pizza Hawaii</span><span>9,00€</span></div>
+  <div class="item"><span>Pizza Tonno</span><span>9,00€</span></div>
+  <div class="item"><span>Pizza Vegetaria</span><span>9,50€</span></div>
+  <div class="item"><span>Pizza Spezial</span><span>10,50€</span></div>
 </div>
 
-<!-- 🥙 Döner -->
-<button class="accordion">🥙 Döner & Kebab</button>
+<!-- 🥙 DÖNER -->
+<button class="accordion">🥙 Döner & Drehspieß</button>
 <div class="panel">
-  <div class="item">
-    <span>Döner Tasche</span>
-    <span>6,00€</span>
-  </div>
+  <div class="item"><span>Döner Tasche</span><span>6,00€</span></div>
+  <div class="item"><span>Dürüm</span><span>7,00€</span></div>
+  <div class="item"><span>Döner Teller</span><span>9,50€</span></div>
+  <div class="item"><span>Döner Box</span><span>6,50€</span></div>
 </div>
+
+<!-- 🍝 PASTA -->
+<button class="accordion">🍝 Pasta</button>
+<div class="panel">
+  <div class="item"><span>Spaghetti Bolognese</span><span>8,50€</span></div>
+  <div class="item"><span>Spaghetti Carbonara</span><span>9,00€</span></div>
+  <div class="item"><span>Spaghetti Napoli</span><span>7,50€</span></div>
+  <div class="item"><span>Lasagne</span><span>9,50€</span></div>
+</div>
+
+<!-- 🍔 BURGER -->
+<button class="accordion">🍔 Burger</button>
+<div class="panel">
+  <div class="item"><span>Cheeseburger</span><span>7,50€</span></div>
+  <div class="item"><span>Chicken Burger</span><span>7,00€</span></div>
+  <div class="item"><span>Hamburger</span><span>7,00€</span></div>
+</div>
+
+<!-- 🥗 SALATE -->
+<button class="accordion">🥗 Salate</button>
+<div class="panel">
+  <div class="item"><span>Gemischter Salat</span><span>5,50€</span></div>
+  <div class="item"><span>Thunfischsalat</span><span>7,00€</span></div>
+  <div class="item"><span>Hähnchensalat</span><span>7,50€</span></div>
+</div>
+
+<!-- 🍟 SNACKS -->
+<button class="accordion">🍟 Snacks & Beilagen</button>
+<div class="panel">
+  <div class="item"><span>Pommes</span><span>3,00€</span></div>
+  <div class="item"><span>Chicken Nuggets</span><span>5,00€</span></div>
+</div>
+
+</div>
+
+<a href="https://wa.me/49123456789" class="whatsapp">💬</a>
 
 <script>
-var acc = document.getElementsByClassName("accordion");
+let acc = document.getElementsByClassName("accordion");
 
 for (let i = 0; i < acc.length; i++) {
   acc[i].onclick = function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
+    let panel = this.nextElementSibling;
     panel.style.display = panel.style.display === "block" ? "none" : "block";
   };
 }
