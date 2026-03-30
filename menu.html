@@ -63,16 +63,13 @@ body {
 
 .panel {
   display: none;
-  padding: 10px 15px 15px 15px;
+  padding: 10px;
 }
 
 /* Menü Items */
 .item {
   padding: 10px 0;
   border-bottom: 1px solid #333;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
 }
 
 .desc {
@@ -85,17 +82,6 @@ body {
   font-size: 14px;
   margin-bottom: 10px;
   color: #ddd;
-  display: flex;
-  justify-content: flex-end;
-  gap: 50px;
-  font-weight: bold;
-}
-
-/* Preise */
-.prices {
-  display: flex;
-  gap: 50px;
-  font-weight: bold;
 }
 
 /* WhatsApp */
@@ -125,55 +111,32 @@ body {
 <button class="accordion">🍕 Pizza</button>
 <div class="panel">
 
-  <!-- Größen Hinweis oben -->
   <div class="size-info">
-    <span>Ø 24 cm</span>
-    <span>Ø 32 cm</span>
-  </div>
-
-  <!-- Pizza Items -->
-  <div class="item">
-    <div>
-      <strong>1. Pizza Margherita</strong><br>
-      <div class="desc">mit Tomatensauce und Käse</div>
-    </div>
-    <div class="prices">
-      <span>6,50€</span>
-      <span>8,00€</span>
-    </div>
+    Ø = Durchmesser • Klein: 24cm • Groß: 32cm
   </div>
 
   <div class="item">
-    <div>
-      <strong>2. Pizza Salami</strong><br>
-      <div class="desc">mit Tomatensauce, Käse und Salami</div>
-    </div>
-    <div class="prices">
-      <span>8,50€</span>
-      <span>10,50€</span>
-    </div>
+    <strong>1. Pizza Margherita</strong><br>
+    <div class="desc">mit Tomatensauce und Käse</div>
+    24cm: 6,50€ | 32cm: 8,00€
   </div>
 
   <div class="item">
-    <div>
-      <strong>3. Pizza Prosciutto</strong><br>
-      <div class="desc">mit Schinken</div>
-    </div>
-    <div class="prices">
-      <span>8,50€</span>
-      <span>10,50€</span>
-    </div>
+    <strong>2. Pizza Salami</strong><br>
+    <div class="desc">mit Tomatensauce, Käse und Salami</div>
+    24cm: 8,50€ | 32cm: 10,50€
   </div>
 
   <div class="item">
-    <div>
-      <strong>4. Pizza Funghi</strong><br>
-      <div class="desc">mit Champignons</div>
-    </div>
-    <div class="prices">
-      <span>8,00€</span>
-      <span>10,00€</span>
-    </div>
+    <strong>3. Pizza Prosciutto</strong><br>
+    <div class="desc">mit Schinken</div>
+    24cm: 8,50€ | 32cm: 10,50€
+  </div>
+
+  <div class="item">
+    <strong>4. Pizza Funghi</strong><br>
+    <div class="desc">mit Champignons</div>
+    24cm: 8,00€ | 32cm: 10,00€
   </div>
 
 </div>
@@ -183,23 +146,15 @@ body {
 <div class="panel">
 
   <div class="item">
-    <div>
-      <strong>21. Döner Tasche</strong><br>
-      <div class="desc">mit Salat und Sauce</div>
-    </div>
-    <div class="prices">
-      <span>6,00€</span>
-    </div>
+    <strong>21. Döner Tasche</strong><br>
+    <div class="desc">mit Salat und Sauce</div>
+    6,00€
   </div>
 
   <div class="item">
-    <div>
-      <strong>22. Dürüm</strong><br>
-      <div class="desc">gerollt im Fladenbrot</div>
-    </div>
-    <div class="prices">
-      <span>7,00€</span>
-    </div>
+    <strong>22. Dürüm</strong><br>
+    <div class="desc">gerollt im Fladenbrot</div>
+    7,00€
   </div>
 
 </div>
